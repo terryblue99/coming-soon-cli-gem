@@ -1,5 +1,2 @@
-require "coming_soon/version"
-
-module ComingSoon
-  # Your code goes here...
-end
+require_relative './coming_soon/version'
+require_relative './coming_soon/cli'
