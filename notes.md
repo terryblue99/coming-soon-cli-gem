@@ -6,20 +6,20 @@ how to build a gem
 make a gem using bundler (e.g bundle gem daily_deal); - watch the video
 how to build a cli gem
 3.	Start with the entry point - the file run => bin/coming-soon
-#!/usr/bin/env ruby
-require ‘bundler/setup’
-require ‘coming_soon’
-ComingSoon::CLI.new.call   
-the environment file => lib/coming_soon.rb
-			require_relative ‘./coming_soon /version’
-			require_relative ‘./coming_soon /movies’
-			require_relative ‘./coming_soon /cli’
+													#!/usr/bin/env ruby
+													require ‘bundler/setup’
+													require ‘coming_soon’
+													ComingSoon::CLI.new.call   
+						the environment file => lib/coming_soon.rb
+													require_relative ‘./coming_soon /version’
+													require_relative ‘./coming_soon /movies’
+													require_relative ‘./coming_soon /cli’
 4.	Force that to build the CLI interface => lib/coming_soon /cli.rb => ComingSoon::CLI
 5.	Stub out the interface def call
-	   list_movies => scrape data
-    menu       => display menu of movies
-    goodbye  => say goodbye
-	end
+							   list_movies => scrape data
+							    menu       => display menu of movies
+							    goodbye  => say goodbye
+							end
 6.	Start making things real => ComingSoon::Movies
 7.	Discover objects
 8.	Program
@@ -38,7 +38,7 @@ Which movie do you want to learn more about?
 
 1
 
-What is a deal?
+What is a movie?
 
 •	A movie has a name
 •	A deal has a URL
