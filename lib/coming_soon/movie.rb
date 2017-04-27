@@ -4,17 +4,22 @@ class ComingSoon::Movie
 
 	def self.movies
 
-		movie_1 = self.new
-		movie_1.name = 'Guardians of the Galaxy Vol 2'
-		movie_1.start_date = 'May 5'
-		movie_1.url = 'http://www.imdb.com/title/tt3896198/?ref_=cs_ov_i'
+		doc = Nokogiri::HTML(open("http://www.fandango.com/moviescomingsoon"))
+		# name: doc.css("li.visual-item a.visual-title").text.strip
+		# start_date: doc.css("li.visual-item span").text
+		# url: doc.css("li.visual-item a").attribute("href").value
 
-		movie_2 = self.new
-		movie_2.name = 'The Lovers'
-		movie_2.start_date = 'May 5'
-		movie_2.url = 'http://www.imdb.com/title/tt5770620/?ref_=cs_ov_i'
+		list = doc.css("li.visual-item")
 
-		[movie_1, movie_2]
+		@movies = []
+
+		list.each do |movie|
+			soon = self.new
+			soon.name = movie.css("a.visual-title").text.strip
+			soon.start_date = movie.css("span").text
+			soon.url = movie.css("a").attribute("href").value
+			@movies << soon
+		end	
 
 	end
 

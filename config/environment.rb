@@ -1,3 +1,6 @@
-require_relative './coming_soon/version'
-require_relative './coming_soon/movie'
-require_relative './coming_soon/cli'
+require 'nokogiri'
+require 'open-uri'
+
+require_relative '../lib/coming_soon/version'
+require_relative '../lib/coming_soon/movie'
+require_relative '../lib//coming_soon/cli'
