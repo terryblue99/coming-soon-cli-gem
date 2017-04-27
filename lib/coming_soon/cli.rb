@@ -12,9 +12,9 @@ class ComingSoon::CLI
 	end
 
 	def menu_select
-		puts 'You may enter a movie number for more details or list to see the menu again or exit'
 		input = ''
 		while input != 'exit'
+			puts 'You may enter a movie number for more details or list to see the menu again or exit'
 			input = gets.strip
 			case input
 			when '1'
