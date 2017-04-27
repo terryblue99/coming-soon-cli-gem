@@ -20,7 +20,7 @@ class ComingSoon::Movie
 			soon.url = movie.css("a").attribute("href").value
 			@movies << soon
 		end	
-
+		@movies
 	end
 
 end
