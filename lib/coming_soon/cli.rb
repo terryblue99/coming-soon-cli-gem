@@ -1,4 +1,4 @@
-# CLI Controller
+require 'pry'
 class ComingSoon::CLI
 
 	def call
@@ -9,6 +9,9 @@ class ComingSoon::CLI
 	def list_movies
 		puts 'Movies Coming Soon:'
 		@movies = ComingSoon::Movie.movies
+		@movies.each.with_index(1) do |movie, i|
+			puts "#{i}. #{movie.name} - #{movie.start_date}"
+		end
 	end
 
 	def menu_select
@@ -16,14 +19,12 @@ class ComingSoon::CLI
 		while input != 'exit'
 			puts 'You may enter a movie number for more details or list to see the menu again or exit'
 			input = gets.strip
-			case input
-			when '1'
-				puts 'More info on movie 1...'
-			when '2'
-				puts 'More info on movie 2...'
-			when 'list'
+
+			if input.to_i > 0
+				puts @movies[input.to_i-1]	
+			elsif input == 'list'
 				list_movies
-			when 'exit'
+			elsif input == 'exit'
 				exit		
 			else
 				puts 'Invalid selection!'
@@ -33,3 +34,10 @@ class ComingSoon::CLI
 	end
 
 end	
+
+
+
+
+
+
+

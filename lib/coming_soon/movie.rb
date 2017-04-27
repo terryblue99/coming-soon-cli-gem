@@ -15,6 +15,7 @@ class ComingSoon::Movie
 		movie_2.url = 'http://www.imdb.com/title/tt5770620/?ref_=cs_ov_i'
 
 		[movie_1, movie_2]
+
 	end
 
 end
