@@ -10,11 +10,13 @@ how to build a cli gem
 													require ‘bundler/setup’
 													require ‘coming_soon’
 													ComingSoon::CLI.new.call   
-						the environment file => lib/coming_soon.rb
-													require_relative ‘./coming_soon /version’
-													require_relative ‘./coming_soon /movies’
-													require_relative ‘./coming_soon /cli’
-4.	Force that to build the CLI interface => lib/coming_soon /cli.rb => ComingSoon::CLI
+							environment file => lib/coming_soon.rb
+													require_relative '../config/environment'
+														../config/environment						
+															require_relative ‘./coming_soon /version’
+															require_relative ‘./coming_soon /movies’
+															require_relative ‘./coming_soon /cli’
+	4.	Force that to build the CLI interface => lib/coming_soon /cli.rb => ComingSoon::CLI
 5.	Stub out the interface def call
 							   list_movies => scrape data
 							    menu       => display menu of movies

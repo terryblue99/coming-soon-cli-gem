@@ -1,4 +1,3 @@
-require 'pry'
 class ComingSoon::CLI
 
 	def call
