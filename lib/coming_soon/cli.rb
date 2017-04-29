@@ -7,7 +7,7 @@ class ComingSoon::CLI
 	end
 
 	def list_movies
-		puts 'Movies Coming Soon:'
+		puts 'Movies Coming Soon (Please wait!):'
 		@movies = ComingSoon::Movie.movies
 		@movies.each.with_index(1) do |movie, i|
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
