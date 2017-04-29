@@ -15,39 +15,39 @@ class ComingSoon::Movie
 		# start_date: doc.css("li.visual-item span").text
 		# url: doc.css("li.visual-item a").attribute("href").value
 
-		list = doc.css("li.visual-item")
+		movie_list = doc.css("li.visual-item")
 		@movies = []
 		@count = 1
 
-		list.each do |movie|
+		movie_list.each do |movie|
 			@soon = self.new
 			@soon.name = movie.css("a.visual-title").text.strip
 			@soon.start_date = movie.css("span").text
 			@soon.url = movie.css("a").attribute("href").value
-			@soon_https_url = movie.css("a").attribute("href").value.sub(/http:/, 'https:')
-			self.scrape_synopses
+			self.scrape_synopsis
 			@movies << @soon
 			@count+=1
-			if @count > 20
+			if @count > 20 # Displays only 20 movies
 				break
 			end
 		end
 		
 	end
 
-	def self.scrape_synopses
+	def self.scrape_synopsis
 
 		begin
-			doc_synop1 = Nokogiri::HTML(open(@soon_https_url))
+			@doc_synop1 = Nokogiri::HTML(open(@soon.url)) # Uses the HTTP 'movieoverview' url
 		rescue
-			@soon_https_url = @soon_https_url.sub(/movieoverview/, 'plotsummary').sub(/http:/, 'https:')
-			doc_synop1 = Nokogiri::HTML(open(@soon_https_url))
 			redirect_failed = true # An HTTP to HTTPS redirect failed
 		end
-		if !doc_synop1.css("a.movie-synopsis-link").any? && !redirect_failed
-			@soon.synopsis = doc_synop1.css("span#SynopsisTextLabel").text
+		if !@doc_synop1.css("a.movie-synopsis-link").any? && !redirect_failed
+			# If a READ FULL SYNOPSIS link is not present and not a 
+			# redirect failure, use the available text for the synopsis
+			@soon.synopsis = @doc_synop1.css("span#SynopsisTextLabel").text
 		else
-			synop_url = @soon_https_url.sub(/movieoverview/, 'plotsummary').sub(/http:/, 'https:')
+			# scrape the synopsis using the 'plotsummary' url
+			synop_url = @soon.url.sub(/movieoverview/, 'plotsummary')
 			doc_synop2 = Nokogiri::HTML(open(synop_url))
 			@soon.synopsis = doc_synop2.css("p.subpage-descriptive-content").text
 		end

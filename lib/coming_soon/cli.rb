@@ -1,12 +1,17 @@
 class ComingSoon::CLI
 
 	def call
-		list_movies
-		menu_select
+		get_and_list_movies
+		menu_selection
 	end
 
-	def list_movies
-		puts 'Movies Coming Soon (Please wait!):'
+	def get_and_list_movies
+		puts ''
+		puts '               **********************'
+		puts '               * Movies Coming Soon *'
+		puts '               *    Please wait!    *'
+		puts '               **********************'
+		puts ''
 		@movies = ComingSoon::Movie.movies
 		@movies.each.with_index(1) do |movie, i|
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
@@ -14,13 +19,17 @@ class ComingSoon::CLI
 	end
 
 	def list_saved_movies
-		puts 'Movies Coming Soon:'
+		puts ''
+		puts '               **********************'
+		puts '               * Movies Coming Soon *'
+		puts '               **********************'
+		puts ''
 		@movies.each.with_index(1) do |movie, i|
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
 		end
 	end
 
-	def menu_select
+	def menu_selection
 		input = ''
 		while input != 'exit'
 			puts ''
@@ -35,7 +44,7 @@ class ComingSoon::CLI
 				goodbye	
 			else
 				puts 'Invalid selection!'
-				menu_select	
+				menu_selection
 			end	
 		end	
 	end
@@ -44,6 +53,12 @@ class ComingSoon::CLI
 
 		puts "Thank you and goodbye"
 		puts "Come back soon!"
+		puts ''
+		puts '               *************************'
+		puts '               * Thank you and goodbye *'
+		puts '               *    Come back soon!    *'
+		puts '               *************************'
+		puts ''
 		exit
 		
 	end
