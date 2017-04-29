@@ -32,12 +32,20 @@ class ComingSoon::CLI
 			elsif input == 'list'
 				list_saved_movies
 			elsif input == 'exit'
-				exit	
+				goodbye	
 			else
 				puts 'Invalid selection!'
 				menu_select	
 			end	
 		end	
+	end
+
+	def goodbye
+
+		puts "Thank you and goodbye"
+		puts "Come back soon!"
+		exit
+		
 	end
 
 end	
