@@ -1,11 +1,10 @@
-require 'pry'
-
 class ComingSoon::Movie
 	attr_accessor :name, :start_date, :url, :synopsis
 
 	def self.movies
 
-		self.scrape_movies			
+		self.scrape_movies
+
 		@movies
 
 	end
@@ -19,17 +18,20 @@ class ComingSoon::Movie
 
 		movie_list = doc.css("li.visual-item")
 		@movies = []
-		@count = 1
+		count = 1
 
 		movie_list.each do |movie|
 			@soon = self.new
 			@soon.name = movie.css("a.visual-title").text.strip
 			@soon.start_date = movie.css("span").text
 			@soon.url = movie.css("a").attribute("href").value
+
 			self.scrape_synopsis
+
 			@movies << @soon
-			@count+=1
-			if @count > 20 # Displays only 20 movies
+
+			count+=1
+			if count > 20 # Displays only 20 movies
 				break
 			end
 		end
@@ -45,7 +47,7 @@ class ComingSoon::Movie
 		rescue
 			redirect_failed = true # An HTTP to HTTPS redirect failed
 		end
-
+		
 		if !@doc_synop1.css("a.movie-synopsis-link").any? && !redirect_failed &&
 			@doc_synop1.css("span#SynopsisTextLabel").any?
 			# If not a redirect failure and a READ FULL SYNOPSIS link is not
