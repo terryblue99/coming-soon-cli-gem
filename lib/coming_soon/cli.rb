@@ -2,6 +2,7 @@ class ComingSoon::CLI
 
 	def call
 		get_and_list_movies
+		
 		menu_selection
 	end
 
@@ -56,7 +57,6 @@ class ComingSoon::CLI
 	end
 
 	def goodbye
-
 		puts ''
 		puts '               *************************'
 		puts '               * Thank you and goodbye *'
@@ -64,9 +64,8 @@ class ComingSoon::CLI
 		puts '               *    Come back soon!    *'
 		puts '               *************************'
 		puts ''
-		
+
 		exit
-		
 	end
 
 end	
