@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Movies Coming Soon"
   spec.description   = "Provides details of movies coming soon"
-  spec.homepage      = "https://github.com/terryblue99/coming-soon-cli-gem"
+  spec.homepage      = "https://rubygems.org/gems/coming_soon"
   spec.license       = 'MIT'
 
   spec.add_development_dependency "bundler", "~> 1.12"
