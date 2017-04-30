@@ -1,3 +1,4 @@
+
 # Coming Soon
 
 This Ruby Gem provides a CLI to view movies coming soon and also allows the user to select specific movies to view further details on.
