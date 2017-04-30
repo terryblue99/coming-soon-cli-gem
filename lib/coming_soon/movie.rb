@@ -1,3 +1,4 @@
+
 class ComingSoon::Movie
 	attr_accessor :name, :start_date, :url, :synopsis
 
