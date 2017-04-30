@@ -1,10 +1,10 @@
 Coming Soon Gem
 
-1.	Plan your gem, imagine your interface
+1.	Plan the gem, imagine the interface
 2.	Start with the project structure - google:
-how to build a gem
-make a gem using bundler (e.g bundle gem daily_deal); - watch the video
-how to build a cli gem
+		how to build a gem
+		make a gem using bundler (e.g bundle gem daily_deal); - watch the video
+		how to build a cli gem
 3.	Start with the entry point - the file run => bin/coming-soon
 													#!/usr/bin/env ruby
 													require ‘bundler/setup’
@@ -16,19 +16,18 @@ how to build a cli gem
 															require_relative ‘./coming_soon /version’
 															require_relative ‘./coming_soon /movies’
 															require_relative ‘./coming_soon /cli’
-	4.	Force that to build the CLI interface => lib/coming_soon /cli.rb => ComingSoon::CLI
-5.	Stub out the interface def call
-							   list_movies => scrape data
-							    menu       => display menu of movies
-							    goodbye  => say goodbye
-							end
-6.	Start making things real => ComingSoon::Movies
+4.	Force that to build the CLI interface => lib/coming_soon /cli.rb => ComingSoon::CLI
+5.	Stub out the interface: list_movies => scrape data
+							menu       	=> display menu of movies
+							goodbye  	=> say goodbye
+
+6.	Start making things real
 7.	Discover objects
 8.	Program
 
 Example:
 
-A command line interface for movies coming soon, starting with IMDb
+A command line interface for movies coming soon, starting with Fandango
 
 •	User types coming-soon
 •	Show a list of movies
@@ -45,3 +44,4 @@ What is a movie?
 •	A movie has a name
 •	A deal has a URL
 •	A movie has a start date
+•	A movie has a synopsis

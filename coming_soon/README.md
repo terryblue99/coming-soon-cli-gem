@@ -1,6 +1,8 @@
-# Coming Soon
+# ComingSoon
 
-This Ruby Gem provides a CLI to view movies coming soon and also allows the user to select specific movies to view further details on.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/coming_soon`. To experiment with that code, run `bin/console` for an interactive prompt.
+
+TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -20,9 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-Type the below and follow the on screen prompts
-
-	$ coming-soon
+TODO: Write usage instructions here
 
 ## Development
 
@@ -32,8 +32,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/terryblue99/coming_soon.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/coming_soon.
 
-## License
-
-The gem is available as open source under the terms of the MIT License.
