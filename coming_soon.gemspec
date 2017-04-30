@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "coming_soon"
   spec.version       = ComingSoon::VERSION
   spec.authors       = ["Terry Blue"]
-  spec.email         = ["terryblue@comcast.net"]
+  spec.email         = ["terry_blue@comcast.net"]
 
   spec.summary       = "Movies Coming Soon"
   spec.description   = "Provides details of movies coming soon"
