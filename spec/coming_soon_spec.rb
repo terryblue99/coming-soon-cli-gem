@@ -9,3 +9,4 @@ describe ComingSoon do
     expect(false).to eq(true)
   end
 end
+
