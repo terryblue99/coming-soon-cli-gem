@@ -44,7 +44,7 @@ class ComingSoon::CLI
 			input = gets.strip
 
 			if input.to_i > 0 && input.to_i < @movies.size+1
-				puts "* #{@movies[input.to_i - 1].name} *"
+				puts "* #{@movies[input.to_i - 1].name} - #{@movies[input.to_i - 1].start_date} *"
 				puts @movies[input.to_i - 1].synopsis	
 			elsif input == 'list'
 				list_saved_movies
