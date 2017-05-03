@@ -17,7 +17,7 @@ class ComingSoon::CLI
 
 		@movies = ComingSoon::Movie.movies
 
-		@movies.each.with_index(1) do |movie, i|
+		@movies.each.with_index(1) do |movie, i| # set the first index to 1 and use the index number for the movie number
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
 		end
 	end
@@ -29,7 +29,7 @@ class ComingSoon::CLI
 		puts '               **********************'
 		puts ''
 
-		@movies.each.with_index(1) do |movie, i|
+		@movies.each.with_index(1) do |movie, i| # set the first index to 1 and use the index number for the movie number
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
 		end
 	end
