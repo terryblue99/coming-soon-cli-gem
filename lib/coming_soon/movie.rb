@@ -21,7 +21,7 @@ class ComingSoon::Movie
 		@movies = []
 		count = 1
 
-		movie_list.each do |movie|
+		movie_list.each do |movie| 
 			@soon = self.new
 			@soon.name = movie.css("a.visual-title").text.strip
 			@soon.start_date = movie.css("span").text
@@ -55,7 +55,8 @@ class ComingSoon::Movie
 			# present and any text is available, use the text for the synopsis
 			@soon.synopsis = @doc_synop1.css("span#SynopsisTextLabel").text
 		else
-			# scrape the synopsis using the HTTP 'plotsummary' url
+			# Scrape the synopsis using the HTTP 'plotsummary' url
+			# This is also executed after an HTTP to HTTPS redirect failed
 			synop_url = @soon.url.sub(/movieoverview/, 'plotsummary')
 			doc_synop2 = Nokogiri::HTML(open(synop_url))
 			@soon.synopsis = doc_synop2.css("p.subpage-descriptive-content").text
