@@ -40,7 +40,7 @@ class ComingSoon::CLI
 			puts ''
 			puts 'You may enter a movie number for more details or "list" to see the menu again or "exit"'
 
-			input = gets.strip
+			input = gets.strip.downcase
 
 			if input.to_i > 0 && input.to_i < ComingSoon::Movie.movies.size+1
 				puts "* #{ComingSoon::Movie.movies[input.to_i - 1].name} - #{ComingSoon::Movie.movies[input.to_i - 1].start_date} *"
