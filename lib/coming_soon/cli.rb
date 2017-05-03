@@ -1,6 +1,7 @@
 class ComingSoon::CLI
 
 	def call
+
 		puts ''
 		puts '               **************************'
 		puts '               *   Movies Coming Soon   *'
@@ -9,9 +10,10 @@ class ComingSoon::CLI
 		puts '               **************************'
 		puts ''
 
-		ComingSoon::Scraper.scrape_movies
+		ComingSoon::Scraper.new.scrape_movies
 		get_and_list_movies		
 		menu_selection
+
 	end
 
 	def get_and_list_movies
@@ -19,9 +21,11 @@ class ComingSoon::CLI
 		ComingSoon::Movie.movies.each.with_index(1) do |movie, i| # set the first index to 1 and use the index number for the movie number
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
 		end
+
 	end
 
 	def list_saved_movies
+
 		puts ''
 		puts '               **************************'
 		puts '               *   Movies Coming Soon   *'
@@ -31,9 +35,11 @@ class ComingSoon::CLI
 		ComingSoon::Movie.movies.each.with_index(1) do |movie, i| # set the first index to 1 and use the index number for the movie number
 			puts "#{i}. #{movie.name} - #{movie.start_date}"
 		end
+
 	end
 
 	def menu_selection
+
 		input = ''
 
 		while input != 'exit'
@@ -53,10 +59,12 @@ class ComingSoon::CLI
 				puts 'Invalid selection!'
 				menu_selection
 			end	
-		end	
+		end
+
 	end
 
 	def goodbye
+
 		puts ''
 		puts '               ***************************'
 		puts '               *  Thank you and goodbye  *'
@@ -66,6 +74,7 @@ class ComingSoon::CLI
 		puts ''
 
 		exit
+		
 	end
 
 end	
