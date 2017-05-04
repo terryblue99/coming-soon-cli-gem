@@ -4,9 +4,9 @@ class ComingSoon::CLI
 
 		puts ''
 		puts '               **************************'
-		puts '               *   Movies Coming Soon   *'
-		puts '               *     --------------     *'
-		puts '               *      Please wait!      *'
+		puts '               |   Movies Coming Soon   |'
+		puts '               |     --------------     |'
+		puts '               |      Please wait!      |'
 		puts '               **************************'
 		puts ''
 
@@ -33,7 +33,7 @@ class ComingSoon::CLI
 
 		puts ''
 		puts '               **************************'
-		puts '               *   Movies Coming Soon   *'
+		puts '               |   Movies Coming Soon   |'
 		puts '               **************************'
 		puts ''
 
@@ -72,9 +72,9 @@ class ComingSoon::CLI
 
 		puts ''
 		puts '               ***************************'
-		puts '               *  Thank you and goodbye  *'
-		puts '               *    -----------------    *'
-		puts '               *     Come back soon!     *'
+		puts '               |  Thank you and goodbye  |'
+		puts '               |    -----------------    |'
+		puts '               |     Come back soon!     |'
 		puts '               ***************************'
 		puts ''
 
