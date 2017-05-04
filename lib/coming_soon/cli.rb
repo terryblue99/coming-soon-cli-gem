@@ -19,7 +19,12 @@ class ComingSoon::CLI
 	def get_and_list_movies
 		
 		ComingSoon::Movie.movies.each.with_index(1) do |movie, i| # set the first index to 1 and use the index number for the movie number
-			puts "#{i}. #{movie.name} - #{movie.start_date}"
+			if i < 10
+				spacer = ' '
+			else
+				spacer = ''
+			end		
+			puts "#{spacer}#{i}. #{movie.name} - #{movie.start_date}"
 		end
 
 	end
